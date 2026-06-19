@@ -33,6 +33,13 @@ define KernelPackage/qos-tc/config
 	menu "configuration"
 	depends on PACKAGE_kmod-qos-tc
 
+	config KERNEL_QOS_TC_SWITCH_OFFLOAD
+		bool "QoS TC switch offload support"
+		default y
+		help
+		  Select this to enable QoS TC switch offload support.
+		  If not selected, stub implementations will be used instead.
+
 	config KERNEL_QOS_TC_KCOV
 		bool "Enable KCOV instrumentation" if !KERNEL_KCOV_INSTRUMENT_ALL
 		depends on KERNEL_KCOV
